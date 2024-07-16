@@ -53,7 +53,7 @@ header #navigation ul {
   display: flex;
 }
 
-header .navigation ul > li {
+header .navigation ul>li {
   margin-left: 1rem;
   font-weight: bold;
 }
@@ -80,6 +80,7 @@ header #navigation ul li a:hover {
   transition: ease 0.5s;
   margin-top: 1.3rem;
 }
+
 .side-bar ul li a {
   list-style: none;
   width: 100%;
@@ -103,7 +104,9 @@ main {
 #photos,
 #contact {
   padding: 3rem;
+  height: max-content;
 }
+
 
 #home {
   display: flex;
@@ -154,13 +157,13 @@ main {
   border-bottom: 1px solid #dce0d9;
 }
 
-#about > div {
+#about>div {
   margin: auto;
   background-color: #0a0908a6;
   padding: 1rem;
 }
 
-#about div > div {
+#about div>div {
   margin-bottom: 2rem;
 }
 
@@ -172,7 +175,7 @@ main {
   padding-left: 1rem;
 }
 
-#photos{
+#photos {
   height: auto;
 }
 
@@ -183,7 +186,7 @@ main {
   height: 100%;
 }
 
-#photos .image-container div{
+#photos .image-container div {
   width: 33%;
   background-color: #dce0d9;
   margin: 1rem;
@@ -191,15 +194,17 @@ main {
   border-radius: 5px;
 }
 
-#photos .image-container div >h1{
+#photos .image-container div>h1 {
   color: #0a0908;
   text-align: center;
 }
+
 #contact {
   border-top: 1px solid #dce0d9;
   display: flex;
 }
-#contact > div {
+
+#contact>div {
   width: 50%;
   padding: 1rem;
   height: fit-content;
@@ -230,6 +235,7 @@ main {
   color: #0a0908;
   padding: 1rem;
 }
+
 #contact .contact-form h3 {
   text-align: center;
 }
@@ -247,6 +253,7 @@ main {
   color: #0a0908;
   padding: 1rem;
 }
+
 #contact .contact-form button {
   color: #0a0908a6;
   font-weight: bold;
@@ -275,7 +282,7 @@ footer {
   padding: 1rem;
 }
 
-#footer > p {
+#footer>p {
   color: #0a0908;
   text-align: center;
 }
@@ -292,9 +299,11 @@ footer {
   .container {
     max-width: 1024px;
   }
+
   #home #programming-image {
     width: 450px;
   }
+
   #home .hero h1 {
     font-size: 3rem;
   }
@@ -308,6 +317,7 @@ footer {
   #home .hero h1 {
     font-size: 2.5rem;
   }
+
   #home .hero h2 {
     font-size: 2.3rem;
   }
@@ -322,6 +332,7 @@ footer {
     font-size: 2.1rem;
   }
 }
+
 @media (max-width: 872px) {
   #home .hero h2 {
     font-size: 2rem;
@@ -347,6 +358,7 @@ footer {
     font-size: 1.7rem;
   }
 }
+
 @media (max-width: 768px) {
   .container {
     max-width: 640px;
@@ -362,6 +374,7 @@ footer {
   #contact {
     padding: 0;
   }
+
   #home #programming-image {
     width: 350px;
   }
@@ -396,6 +409,7 @@ footer {
   .side-bar .close-icon {
     display: none;
   }
+
   .side-bar .close-icon:hover,
   .side-bar .menu-icon:hover {
     cursor: pointer;
@@ -404,7 +418,7 @@ footer {
   }
 
   .side-bar.active .close-icon {
-    display: flex;
+    display: block;
     transition: ease-in-out 0.5s;
   }
 
@@ -430,6 +444,7 @@ footer {
     display: contents;
     margin: 0;
   }
+
   .side-bar ul li {
     padding: 1rem;
   }
@@ -446,13 +461,20 @@ footer {
   }
 
   #photos .image-container div {
-    width:90%;
+    width: 90%;
     background-color: #dce0d9;
     margin: 1rem;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
-}
+  }
+
+  #home,
+  #about,
+  #photos,
+  #contact {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -490,7 +512,7 @@ footer {
     width: 100%;
   }
 
-  #contact > div {
+  #contact>div {
     width: 100%;
   }
 
@@ -506,16 +528,10 @@ footer {
     margin: 0;
   }
 }
+
 @media (max-width: 475px) {
   .container {
     max-width: 100%;
-  }
-
-  #home,
-  #about,
-  #photos,
-  #contact {
-    padding: 1rem;
   }
 
   #home .hero h1 {
@@ -531,10 +547,10 @@ footer {
   }
 
   #contact .contact-form {
-    min-width: 100%;
+    max-width: 100%;
   }
 
-  .side-bar.active ul {
+  /* .side-bar.active ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -545,5 +561,25 @@ footer {
     transition: ease-in-out 0.5s;
     height: auto;
     padding: 1rem;
+  } */
 }
+
+@media(max-width:447px) {
+  #home #programming-image {
+    width: 100%;
+  }
+
+  #home .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  #home .hero h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media(max-width:349px) {
+  #home .hero h1 {
+    font-size: 2rem;
+  }
 }
