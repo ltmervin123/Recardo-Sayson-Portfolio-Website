@@ -44,7 +44,7 @@ header #navigation {
   display: flex;
   min-width: 100%;
   height: 100%;
-  padding: 1.5rem;
+  padding: 1.5rem 3rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -55,6 +55,7 @@ header #navigation ul {
 
 header #navigation ul > li {
   margin-left: 1rem;
+  font-weight: bold;
 }
 
 header #navigation ul li a {
@@ -64,13 +65,33 @@ header #navigation ul li a {
 }
 
 header #navigation ul li a:hover {
-  color: #0a0908;
   cursor: pointer;
-  background-color: #dce0d9;
+  box-shadow: 0 0 10px #dce0d9;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 80%;
+  bottom: 0;
+  right: 0;
+  display: none;
+  width: 20%;
+  transition: ease 0.5s;
+  margin-top: 1.3rem;
+}
+.side-bar ul li a {
+  list-style: none;
+  width: 100%;
+}
+
+.side-bar ul {
+  display: none;
 }
 
 header #navigation h1 {
   font-weight: 900;
+  padding-left: 1rem;
 }
 
 main {
@@ -151,6 +172,29 @@ main {
   padding-left: 1rem;
 }
 
+#photos{
+  height: auto;
+}
+
+#photos .image-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  height: 100%;
+}
+
+#photos .image-container div{
+  width: 33%;
+  background-color: #dce0d9;
+  margin: 1rem;
+  height: 200px;
+  border-radius: 5px;
+}
+
+#photos .image-container div >h1{
+  color: #0a0908;
+  text-align: center;
+}
 #contact {
   border-top: 1px solid #dce0d9;
   display: flex;
@@ -206,13 +250,14 @@ main {
   border: none;
   margin-left: auto;
   margin-right: auto;
+  transition: ease-in-out 0.5s;
 }
 
 #contact .contact-form button:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px #0a0908a6;
   background: transparent;
   color: #dce0d9;
+  box-shadow: 0 0 10px #dce0d9;
 }
 
 footer {
@@ -254,12 +299,55 @@ footer {
   }
 }
 
+@media (max-width: 961px) {
+  #home .hero h1 {
+    font-size: 2.5rem;
+  }
+  #home .hero h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 890px) {
+  #home .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  #home .hero h2 {
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 872px) {
+  #home .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 864px) {
+  #home .hero h1 {
+    font-size: 2rem;
+  }
+
+  #home .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  #home #programming-image {
+    width: 420px;
+  }
+}
+
+@media (max-width: 828px) {
+  #home .hero h2 {
+    font-size: 1.7rem;
+  }
+}
 @media (max-width: 768px) {
   .container {
     max-width: 640px;
   }
 
-  header #navigation ul {
+  header #nav ul {
     display: none;
   }
 
@@ -284,6 +372,82 @@ footer {
   #home .hero .social {
     margin-top: 3rem;
   }
+
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .side-bar ul li a {
+    display: none;
+  }
+
+  .side-bar .menu-icon {
+    display: flex;
+  }
+
+  .side-bar .close-icon {
+    display: none;
+  }
+  .side-bar .close-icon:hover,
+  .side-bar .menu-icon:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #dce0d9;
+    transition: ease-in-out 0.5s;
+  }
+
+  .side-bar.active .close-icon {
+    display: flex;
+    transition: ease-in-out 0.5s;
+  }
+
+  .side-bar.active .menu-icon {
+    display: none;
+    transition: ease-in-out 0.5s;
+  }
+
+  .side-bar.active ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #0a0908a6;
+    width: 100%;
+    transition: ease-in-out 0.5s;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  .side-bar.active ul a {
+    display: contents;
+    margin: 0;
+  }
+  .side-bar ul li {
+    padding: 1rem;
+  }
+
+  .side-bar.active ul li:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #dce0d9;
+  }
+
+  #photos .image-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #photos .image-container div {
+    width:90%;
+    background-color: #dce0d9;
+    margin: 1rem;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 }
 
 @media (max-width: 640px) {
@@ -310,6 +474,7 @@ footer {
   #home .hero h2 {
     font-size: 2.5rem;
   }
+
   #contact {
     border-top: 1px solid #dce0d9;
     display: flex;
@@ -346,5 +511,17 @@ footer {
   #photos,
   #contact {
     padding: 1rem;
+  }
+
+  #home .hero h1 {
+    font-size: 3rem;
+  }
+
+  header #navigation {
+    padding: 1rem 0;
+  }
+
+  header #navigation h1 {
+    padding-left: 0;
   }
 }
